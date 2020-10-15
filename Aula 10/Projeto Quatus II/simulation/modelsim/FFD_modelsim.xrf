@@ -1,0 +1,15 @@
+vendor_name = ModelSim
+source_file = 1, D:/Documents/Faculdade/3 Periodo/Lab SD/Aula 10/Projeto Quatus II/tb_FFD.vhd
+source_file = 1, D:/Documents/Faculdade/3 Periodo/Lab SD/Aula 10/Projeto Quatus II/FFD.vhd
+source_file = 1, D:/Documents/Faculdade/3 Periodo/Lab SD/Aula 10/Projeto Quatus II/db/FFD.cbx.xml
+source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = FFD
+instance = comp, \clock~I\, clock, FFD, 1
+instance = comp, \D~I\, D, FFD, 1
+instance = comp, \Q~reg0feeder\, Q~reg0feeder, FFD, 1
+instance = comp, \rst~I\, rst, FFD, 1
+instance = comp, \Q~reg0\, Q~reg0, FFD, 1
+instance = comp, \Q~I\, Q, FFD, 1

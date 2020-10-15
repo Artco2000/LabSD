@@ -1,0 +1,63 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\Documents\Faculdade\3 Periodo\Lab SD\Aula 10\Model sim 2
+Efuncao
+Z1 w1601304220
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dD:\Documents\Faculdade\3 Periodo\Lab SD\Aula 10\Model sim 2
+Z6 8funcao.vhd
+Z7 Ffuncao.vhd
+l0
+L5
+V>f?nnlWShY>AYdZH31]H93
+Z8 OV;C;10.1d;51
+31
+Z9 !s108 1602453995.008000
+Z10 !s90 -reportprogress|300|-explicit|-93|funcao.vhd|
+Z11 !s107 funcao.vhd|
+Z12 o-explicit -93 -O0
+Z13 tExplicit 1
+!s100 gA9k3JWOUH6PDMh_l:Y;T2
+!i10b 1
+Artl
+R2
+R3
+R4
+DEx4 work 6 funcao 0 22 >f?nnlWShY>AYdZH31]H93
+l14
+L12
+VNe1UNHDd;gn@JzAUYU@?D3
+R8
+31
+R9
+R10
+R11
+R12
+R13
+!s100 lNH^Cc>nfbOg:gaEAhF@g1
+!i10b 1
+Etb_funcao
+w1602453989
+DPx4 ieee 16 std_logic_textio 0 22 ?Il0a149GV276[?[UMDWh2
+R2
+R3
+R4
+R5
+8tb_funcao.vhd
+Ftb_funcao.vhd
+l0
+L8
+VfhDRE`Ka]1F1C`NYH><6U0
+!s100 fGohNA2YTQ[gb<QVg8Q@I3
+R8
+31
+!i10b 1
+!s108 1602453995.335000
+!s90 -reportprogress|300|-explicit|-93|tb_funcao.vhd|
+!s107 tb_funcao.vhd|
+R12
+R13
