@@ -1,3 +1,9 @@
+-- Projeto Laboratorio de Sistemas Digitais 2020/1 - UFMG
+-- Autores:
+--   Arthur  Coelho  Ruback
+--   Eduardo Cardoso Mendes
+--   Ítalo   Azevedo Pereira
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -38,6 +44,7 @@ architecture teste of tb_aeroporto is
 	signal s : std_logic_vector(2 downto 0);
 	signal idAviao, radioOut, nAvioes: std_logic_vector(7 downto 0);
 
+	--Period in nanoseconds
 	constant periodAux : natural := 20;
 	constant period : time := periodAux * 1 ns;
 	signal clk : std_logic := '0';
@@ -100,8 +107,8 @@ architecture teste of tb_aeroporto is
 			variable linea : line;
 			variable input : std_logic_vector(7 downto 0);
 		begin
+			wait for 1 ps;
 			while not endfile(inputs_airplaneList) loop
-				wait for 1 ps;
 				if insertPlane = '1' then
 					readline(inputs_airplaneList ,linea);
 					read(linea,input);
@@ -173,7 +180,7 @@ architecture teste of tb_aeroporto is
 	aleatoriza : process(estado)
 		variable linea : line;
 		variable input : integer;
-		variable seed1, seed2, aux : integer := 979;
+		variable seed1, seed2, aux : integer := 48651;
 		variable id : std_logic_vector(2 downto 0);
 		variable r : real;
 		variable max_val : real := 99.0;

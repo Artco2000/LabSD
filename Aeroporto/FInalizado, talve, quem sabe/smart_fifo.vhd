@@ -1,3 +1,9 @@
+-- Projeto Laboratorio de Sistemas Digitais 2020/1 - UFMG
+-- Autores:
+--   Arthur  Coelho  Ruback
+--   Eduardo Cardoso Mendes
+--   Ítalo   Azevedo Pereira
+
 LIBRARY IEEE;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -12,7 +18,6 @@ entity smart_fifo is
 			busy			   	 : out std_logic;
 			rdata              : out std_logic_vector(7 downto 0);
 			qnt_out            : out std_logic_vector(7 downto 0)
-			--s				   	 : out std_logic_vector(2 downto 0)
 			);
 end smart_fifo;
 
@@ -152,7 +157,7 @@ begin
 				inc_end_count   <= '0';
 				wr_mem          <= '0';
 				rd_mem          <= '0';
-				busy 				 <= '0';
+				busy 			<= '0';
 			when s_clear=>
 				last_op_reg_wr  <= '0';
 				last_op_reg_in  <= '0';
@@ -161,7 +166,7 @@ begin
 				inc_end_count   <= '0';
 				wr_mem          <= '0';
 				rd_mem          <= '0';
-				busy 				 <= '1';
+				busy 			<= '1';
 			when s_write1=>
 				last_op_reg_wr  <= '1';
 				last_op_reg_in  <= '1';
@@ -170,7 +175,7 @@ begin
 				inc_end_count   <= '0';
 				wr_mem          <= '1';
 				rd_mem          <= '0';
-				busy 				 <= '1';
+				busy 			<= '1';
 			when s_write2 =>
 				last_op_reg_wr  <= '0';
 				last_op_reg_in  <= '0';
@@ -179,7 +184,7 @@ begin
 				inc_end_count   <= '1';
 				wr_mem          <= '0';
 				rd_mem          <= '0';
-				busy 				 <= '1';
+				busy 			<= '1';
 			when s_read1=>
 				last_op_reg_wr  <= '1';
 				last_op_reg_in  <= '0';
@@ -188,7 +193,7 @@ begin
 				inc_end_count   <= '0';
 				wr_mem          <= '0';
 				rd_mem          <= '1';
-				busy 				 <= '1';
+				busy 			<= '1';
 			when s_read2=>
 				last_op_reg_wr  <= '0';
 				last_op_reg_in  <= '0';
@@ -197,20 +202,8 @@ begin
 				inc_end_count   <= '0';
 				wr_mem          <= '0';
 				rd_mem          <= '0';
-				busy 				 <= '1';
+				busy 			<= '1';
 			end case;
 	end process;
 
-	
-	-- with state select 
-	-- 	s <= 
-	-- 		"000" when s_wait,
-	-- 		"001" when s_clear,
-	-- 		"010" when s_write1,
-	-- 		"011" when s_write2,
-	-- 		"100" when s_read1,
-	-- 		"101" when s_read2,
-	-- 		"111" when others;
-	
-	
 end my_arch;

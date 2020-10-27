@@ -1,3 +1,9 @@
+-- Projeto Laboratorio de Sistemas Digitais 2020/1 - UFMG
+-- Autores:
+--   Arthur  Coelho  Ruback
+--   Eduardo Cardoso Mendes
+--   Ítalo   Azevedo Pereira
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -12,7 +18,6 @@ entity aeroporto is
 	);
 	port(
 		clk         : in std_logic;
-		--checkM      : in std_logic;
 		reset       : in std_logic;
 		tempoEstado : in natural;
 		problema    : in std_logic;
@@ -52,7 +57,6 @@ architecture RTL of aeroporto is
 			busy			   	 : out std_logic;
 			rdata              : out std_logic_vector(7 downto 0);
 			qnt_out            : out std_logic_vector(7 downto 0)
-			--s				  		 : out std_logic_vector(2 downto 0)
 			);
 	end component;
 
@@ -69,7 +73,7 @@ architecture RTL of aeroporto is
 begin
 	nAvioes <= m_qnt;
 
-	--------INSTANTIATE MEMORY!--------
+	--------INSTANTIATE MEMORY---------
 	mem : smart_fifo port map(wr => m_wr, rd => m_rd, reset => m_rst, clk => clk, wdata => idAviao, empty => m_empty, busy => m_busy, rdata => m_output, qnt_out => m_qnt);
 
 	-------------COUNTER---------------
@@ -127,7 +131,6 @@ begin
 		when analisa => 
 			countRST <= '0';
 			countEN  <= '1';
-			
 			if (problema = '1' and countNUM >= tempoEstado-1) then 
 				NS <= espera;
 				countEN  <= '0';
@@ -142,7 +145,6 @@ begin
 		when espera => 
 			countRST <= '0';
 			countEN  <= '1';
-			
 			if (countNUM >= tProblema and countNUM >= tempoEstado-1) then 
 				NS <= analisa;
 				countEN  <= '0';
@@ -170,7 +172,8 @@ begin
 			m_rd <= '0';
 			storedPlane := m_output;
 			radioOut <= storedPlane;
-			
+			-- Decides the time for take-off or landing
+			-- based on the most significant bit
 			if(storedPlane(7) = '1') then 
 				airplaneTime := tempoP; -- landing
 			else 
